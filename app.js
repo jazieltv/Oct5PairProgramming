@@ -121,19 +121,51 @@ console.log(`GDC of ${number1} and ${number2} is ${gdc}.`);
 //Create a car object with the items: Make, Model, Year, Milage, and Color. Then create 3 methods in the 
 //object; A driveToWork method, driveAroundTheWorld method, and runErrands method. Each of these methods 
 //should affect the car’s mileage adding to it each time and console logging the old mileage and the new mileage.
-let car = {make:"Audi", model:"A3", year:"2006", mileage:115217, color:"Blue",
-driveToWork: function () {
-    console.log('driveToWork'); newMileage: function() {
-    return this.mileage + drive
-}}
-drive(distance) {
-    console.log(`old mileage ${mileage}`);
-    mileage = (this.mileage += distance);
-    console.log(`new mileage ${mileage}`);
-}
-}
-// const ToWork = 33;
-// const AroundTheWorld = 24000;
-// const runErrands = 30;
+// let car = {make:"Audi", model:"A3", year:"2006", mileage:115217, color:"Blue",
+// driveToWork: function () {
+//     console.log('driveToWork'); newMileage: function() {
+//     return this.mileage + drive
+// }}
+// drive(distance) {
+//     console.log(`old mileage ${mileage}`);
+//     mileage = (this.mileage += distance);
+//     console.log(`new mileage ${mileage}`);
+// }
+// }
+// // const ToWork = 33;
+// // const AroundTheWorld = 24000;
+// // const runErrands = 30;
 
-drive.ToWork()
+// drive.ToWork()
+let Car = {
+    make: 'Ford',
+    model: 'Raptor',
+    year: 2014,
+    milage: '',
+    color: 'red',
+    driveToWork: function () {
+        console.log('driveToWork');
+        this.milage = '33 miles'
+        console.log('New Milage : ' + this.milage);
+    },
+    driveAroundTheWorld: function () {
+        console.log('\n')
+        console.log('driveAroundTheWorld');
+        console.log('Old milage : ' + this.milage);
+        this.milage = '24000 miles'
+        console.log('New Milage : ' + this.milage);
+    },
+    runErrands: function () {
+        console.log('\n')
+        console.log('runErrands');
+        console.log('Old milage : ' + this.milage);
+        this.milage = '30 miles'
+        console.log('New Milage : ' + this.milage);
+
+    }
+}
+Car.driveToWork()
+Car.driveAroundTheWorld()
+Car.runErrands()
+
+//hard
