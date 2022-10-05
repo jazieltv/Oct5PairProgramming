@@ -23,38 +23,6 @@ function evenOrOdd(numbers) {
   console.log(evenOrOdd([4,6,12,7,9]))
 
   //Easy 2
-  //Create a function that checks an array for prime numbers then inserts any pimes into a new array.                               
-//   function isPrime(numbers)
-//   {
-//       if (numbers < 2)
-//           return notPrime;
-  
-//       if (numbers == 2)
-//           return prime;
-
-//           let prime = [];
-//           let notPrime = [];
-  
-//       var maxDiv = Math.sqrt(numbers);
-  
-//       for(var i = 2; i <= maxDiv; i++)
-//       {
-//           if (numbers % i == 0)
-//           {
-//             prime.push(numbers[i]);
-//         } else {
-//           notPrime.push(numbers[i]);
-//           }
-//       }
-  
-//       const returnObject = {
-//         prime,
-//         notPrime,
-//       };
-    
-//       return returnObject;
-//   }
-//   console.log(isPrime([2,3,7,10,6,5]))
 var arr = new Array(12, 5, 8, 9, 13, 7, 16)
 function findPrime(arr) {
     var prime = [];
@@ -77,13 +45,13 @@ findPrime(arr);
 
 //medium
 //Create a Function Called “vowelChecker” that takes in a single argument (x) and logs weather or not the input is a vowel
-// const vowels = ["a", "e", "i", "o", "u"];
-//  var x = prompt("enter a letter")
-// if (vowels.indexOf(x.toLowerCase()) >= 0){
-//     console.log("This is a vowel")
-// } else {
-//     console.log("not a vowel")
-// }
+const vowels = ["a", "e", "i", "o", "u"];
+ var x = prompt("enter a letter")
+if (vowels.indexOf(x.toLowerCase()) >= 0){
+    console.log("This is a vowel")
+} else {
+    console.log("not a vowel")
+}
 
 //MEDIUM (2)
 //Create a function that accepts two strings, then determines whether or not the first string is an anagram of the second string by returning a boolean. 
@@ -118,54 +86,51 @@ for (let i = 1; i <= number1 && i <= number2; i++) {
 console.log(`GDC of ${number1} and ${number2} is ${gdc}.`);
 
 //medium4
-//Create a car object with the items: Make, Model, Year, Milage, and Color. Then create 3 methods in the 
-//object; A driveToWork method, driveAroundTheWorld method, and runErrands method. Each of these methods 
-//should affect the car’s mileage adding to it each time and console logging the old mileage and the new mileage.
-// let car = {make:"Audi", model:"A3", year:"2006", mileage:115217, color:"Blue",
-// driveToWork: function () {
-//     console.log('driveToWork'); newMileage: function() {
-//     return this.mileage + drive
-// }}
-// drive(distance) {
-//     console.log(`old mileage ${mileage}`);
-//     mileage = (this.mileage += distance);
-//     console.log(`new mileage ${mileage}`);
-// }
-// }
-// // const ToWork = 33;
-// // const AroundTheWorld = 24000;
-// // const runErrands = 30;
 
-// drive.ToWork()
-let Car = {
-    make: 'Ford',
-    model: 'Raptor',
-    year: 2014,
-    milage: '',
-    color: 'red',
-    driveToWork: function () {
-        console.log('driveToWork');
-        this.milage = '33 miles'
-        console.log('New Milage : ' + this.milage);
-    },
-    driveAroundTheWorld: function () {
-        console.log('\n')
-        console.log('driveAroundTheWorld');
-        console.log('Old milage : ' + this.milage);
-        this.milage = '24000 miles'
-        console.log('New Milage : ' + this.milage);
-    },
-    runErrands: function () {
-        console.log('\n')
-        console.log('runErrands');
-        console.log('Old milage : ' + this.milage);
-        this.milage = '30 miles'
-        console.log('New Milage : ' + this.milage);
-
-    }
+class Car {
+  constructor(make, model, year, color, mileage) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+    this.mileage = 0;
+  }
+  drive(distance) {
+    console.log(`Old Mileage: ${this.mileage}`);
+    this.mileage += distance;
+    console.log(`New Mileage: ${this.mileage}`);
+    return this;
+  }
 }
-Car.driveToWork()
-Car.driveAroundTheWorld()
-Car.runErrands()
+
+let Audi = new Car();
+"Audi", "A3", 2006, "blue", 211234;
+
+let driveToWork = 30;
+let driveAroundTheWorld = 24000;
+let runErrands = 30;
+
+Audi.drive(driveToWork);
+Audi.drive(driveAroundTheWorld);
+Audi.drive(runErrands);
 
 //hard
+
+
+const regex = /^/[a-z]/$/igm;
+const macthing = braces => regex.test(braces)
+  ? macthing(braces.replace(regex, ''))
+  : '' === braces
+
+console.log(macthing("{]")) 
+console.log(macthing("{}")) 
+
+//hectors
+brackets = (str) => {
+    const brackets = ["{}", "[]", "()"];
+    brackets.forEach((e) =>
+      e === `${str.slice(0, 1)}${str.slice(-1)}` ? console.log(true) : console.log(false)
+    );
+  };
+  
+  brackets("{hello world}");
